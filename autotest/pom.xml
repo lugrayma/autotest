@@ -5,11 +5,12 @@
 	<groupId>ogg.it.test</groupId>
 	<artifactId>autotest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
+	<url>http://maven.apache.org</url> 
 	<!-- properties -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+	
 	<repositories>
 		<repository>
 			<id>ali</id>
@@ -33,7 +34,6 @@
 			</plugin>
 		</plugins>
 	</build>
-	<!-- -->
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
@@ -46,6 +46,13 @@
 			<artifactId>json</artifactId>
 			<version>20170516</version>
 		</dependency>
+
+		  <dependency>
+		     <groupId>org.testng</groupId>
+		     <artifactId>testng</artifactId>
+		     <version>6.9.9</version>
+		     <scope>test</scope>
+		  </dependency>
 
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -89,5 +96,4 @@
 			<version>3.0.6</version>
 		</dependency>
 	</dependencies>
-	<!-- -->
 </project>

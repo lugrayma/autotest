@@ -17,11 +17,7 @@ public class loginTest {
 
     @BeforeTest(groups="loginTrue",description = "测试准备工作，获取httpClient对象")
     public void beforeTest(){
-        TestConfig.getUserInfoUrl = ConfigFile.getUrl(InterfaceName.GETUSERINFO);
-        TestConfig.getUserListUrl = ConfigFile.getUrl(InterfaceName.GETUSERLIST);
-        TestConfig.addUserUrl = ConfigFile.getUrl(InterfaceName.ADDUSER);
         TestConfig.loginUrl = ConfigFile.getUrl(InterfaceName.LOGIN);
-        TestConfig.updateUserInfoUrl = ConfigFile.getUrl(InterfaceName.UPDATEUSERINFO);
 
         TestConfig.defaultHttpClient = new DefaultHttpClient();
     }
@@ -39,6 +35,14 @@ public class loginTest {
     public void loginFalse() throws IOException {
         SqlSession session = DatabaseUtil.getSqlsession();
         LoginCase loginCase = session.selectOne("loginCase",2);
+        System.out.println(loginCase.toString());
+        System.out.println(TestConfig.loginUrl);
+    }
+    
+    @Test(description = "用户登录失败接口测试")
+    public void loginunkonw() throws IOException {
+        SqlSession session = DatabaseUtil.getSqlsession();
+        LoginCase loginCase = session.selectOne("loginCase",3);
         System.out.println(loginCase.toString());
         System.out.println(TestConfig.loginUrl);
     }

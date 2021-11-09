@@ -1,6 +1,6 @@
 [
 	{
-			"description":" 请求帶cookies《demo描述",
+			"description":" 请求帶cookies，demo描述",
 			"request" : {
 				 "uri":"/demo",
 				 "method":"get",
