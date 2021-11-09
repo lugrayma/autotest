@@ -1,0 +1,12 @@
+[
+	{
+		"description":"模拟一个psot请求",
+		"request":{
+			"uri":"/postdemo",
+			"method":"post"
+		},
+		"response":{
+			"text":"无paramter的post请求成功"
+		}
+	 }
+]

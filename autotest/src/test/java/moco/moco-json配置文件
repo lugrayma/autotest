@@ -1,0 +1,15 @@
+[
+	{
+			"description":" 请求帶cookies《demo描述",
+			"request" : {
+				 "uri":"/demo",
+				 "method":"get",
+				 "cookies":{
+				 	"login":"true"
+				 }
+			},
+			"response": {
+				 "text":" 這是一個携帶coolies信息的get請求"
+			}
+	 }
+]
