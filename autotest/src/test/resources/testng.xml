@@ -13,6 +13,6 @@
     </classes>
   </test> 
   <listeners>
-  		<listener class-name="config.ExtentTestNGReporterListener"></listener>
+  		<listener class-name="config.ExtentTestNGIReporterListener"></listener>
   </listeners>
 </suite> 

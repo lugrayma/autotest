@@ -6,8 +6,7 @@
       <class name="cases.loginTest">
         <methods>
           <include name="beforeTest"/>
-          <include name="loginTrue"/>
-          <include name="loginFalse"/>
+          <include name="loginunkonw"/>
         </methods>
       </class> <!-- cases.loginTest -->
     </classes>

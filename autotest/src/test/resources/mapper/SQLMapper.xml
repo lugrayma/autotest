@@ -3,10 +3,11 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="model">
+<!-- mybatis核心配置文件darabaseConfig.xml映射到SQLMapper.xml 这个SQL映射文件-->
+<!-- select  id好像对应的时数据库的表空间 --><!-- resultType表示把结果映射到LoginCase这个bean类里面 -->
     <!--获取登录接口case-->
     <select id="loginCase" parameterType="Integer" resultType="model.LoginCase">
         select * from loginCase
         where id=#{id};
     </select>
-
 </mapper>

@@ -2,31 +2,31 @@
 <testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="810" started-at="2021-11-10T00:43:35 CST" finished-at="2021-11-10T00:43:36 CST">
+  <suite name="Default suite" duration-ms="968" started-at="2021-11-10T18:50:36 CST" finished-at="2021-11-10T18:50:37 CST">
     <groups>
       <group name="loginTrue">
-        <method signature="loginTest.loginTrue()[pri:0, instance:cases.loginTest@7aecef]" name="loginTrue" class="cases.loginTest"/>
+        <method signature="loginTest.loginTrue()[pri:0, instance:cases.loginTest@7f6b8c]" name="loginTrue" class="cases.loginTest"/>
       </group> <!-- loginTrue -->
     </groups>
-    <test name="Test" duration-ms="810" started-at="2021-11-10T00:43:35 CST" finished-at="2021-11-10T00:43:36 CST">
+    <test name="Default test" duration-ms="968" started-at="2021-11-10T18:50:36 CST" finished-at="2021-11-10T18:50:37 CST">
       <class name="cases.loginTest">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:cases.loginTest@7aecef]" name="beforeTest" is-config="true" duration-ms="50" started-at="2021-11-10T00:43:35 CST" description="测试准备工作，获取httpClient对象" finished-at="2021-11-10T00:43:35 CST">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:cases.loginTest@7f6b8c]" name="beforeTest" is-config="true" duration-ms="167" started-at="2021-11-10T18:50:36 CST" description="测试准备工作，获取httpClient对象" finished-at="2021-11-10T18:50:36 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="loginTrue()[pri:0, instance:cases.loginTest@7aecef]" name="loginTrue" duration-ms="661" started-at="2021-11-10T00:43:35 CST" description="用户登录接口测试" finished-at="2021-11-10T00:43:36 CST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginTrue -->
-        <test-method status="PASS" signature="loginFalse()[pri:0, instance:cases.loginTest@7aecef]" name="loginFalse" duration-ms="26" started-at="2021-11-10T00:43:36 CST" description="用户登录失败接口测试" finished-at="2021-11-10T00:43:36 CST">
+        <test-method status="PASS" signature="loginFalse()[pri:0, instance:cases.loginTest@7f6b8c]" name="loginFalse" duration-ms="689" started-at="2021-11-10T18:50:36 CST" description="用户登录失败接口测试" finished-at="2021-11-10T18:50:37 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginFalse -->
-        <test-method status="PASS" signature="loginunkonw()[pri:0, instance:cases.loginTest@7aecef]" name="loginunkonw" duration-ms="28" started-at="2021-11-10T00:43:36 CST" description="用户登录失败接口测试" finished-at="2021-11-10T00:43:36 CST">
+        <test-method status="PASS" signature="loginTrue()[pri:0, instance:cases.loginTest@7f6b8c]" name="loginTrue" duration-ms="28" started-at="2021-11-10T18:50:37 CST" description="用户登录接口测试" finished-at="2021-11-10T18:50:37 CST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTrue -->
+        <test-method status="PASS" signature="loginunkonw()[pri:0, instance:cases.loginTest@7f6b8c]" name="loginunkonw" duration-ms="30" started-at="2021-11-10T18:50:37 CST" description="用户登录失败接口测试" finished-at="2021-11-10T18:50:37 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginunkonw -->
       </class> <!-- cases.loginTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
