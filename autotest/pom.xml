@@ -41,7 +41,7 @@
 				<version>2.4.2</version>
 				<configuration>
 					<properties>
-						<suiteXmlFiles>src/test/resources/testng.xml</suiteXmlFiles>
+						<file>src/test/resources/testng.xml</file>
 						<workingDirectory>target/</workingDirectory>
 						<testFailureIgnore>true</testFailureIgnore>
 						<property>
