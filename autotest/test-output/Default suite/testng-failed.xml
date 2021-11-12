@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="cases.loginTest">
+      <class name="cases.bicyclingApiTest">
         <methods>
           <include name="beforeTest"/>
-          <include name="loginunkonw"/>
+          <include name="requestTrue"/>
         </methods>
-      </class> <!-- cases.loginTest -->
+      </class> <!-- cases.bicyclingApiTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

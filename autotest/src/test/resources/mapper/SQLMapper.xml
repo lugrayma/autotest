@@ -4,10 +4,10 @@
 
 <mapper namespace="model">
 <!-- mybatis核心配置文件darabaseConfig.xml映射到SQLMapper.xml 这个SQL映射文件-->
-<!-- select  id好像对应的时数据库的表空间 --><!-- resultType表示把结果映射到LoginCase这个bean类里面 -->
+<!-- select  id是一个别名，执行层调用该名或者到对应的sql--><!-- resultType表示把结果映射到LoginCase这个bean类里面 -->
     <!--获取登录接口case-->
-    <select id="loginCase" parameterType="Integer" resultType="model.LoginCase">
-        select * from loginCase
+    <select id="bicyclingApidatacase" parameterType="Integer" resultType="model.bicyclingbean">
+        SELECT * FROM bicyclingcase
         where id=#{id};
     </select>
 </mapper>

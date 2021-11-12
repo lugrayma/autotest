@@ -7,7 +7,6 @@
 			<methods>
 				<include name="loginTrue"></include>
 				<include name="loginFalse"></include>
-				<include name="loginunkonw"></include>
 			</methods>
 		</class>
     </classes>

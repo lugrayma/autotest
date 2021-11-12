@@ -8,17 +8,12 @@ import model.InterfaceName;
 public class ConfigFile {
     public static ResourceBundle bundle = ResourceBundle.getBundle("application",Locale.CHINA);
     public static String getUrl(InterfaceName name){
-        String address = bundle.getString("test.uri");
-        String uri = "";
+        String address = "";
         //最终测试地址
-        String testUrl;
-
-        if (name == InterfaceName.LOGIN){
-            uri = bundle.getString("login.uri");
+        if (name == InterfaceName.BICYCLINGAPI){
+        	address = bundle.getString("host");
         }
-        testUrl = address + uri;
-
-        return testUrl;
+        return address;
     }
 
 }

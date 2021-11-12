@@ -1,32 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="2267" started-at="2021-11-11T00:38:37 CST" finished-at="2021-11-11T00:38:40 CST">
+  <suite name="Default suite" duration-ms="1809" started-at="2021-11-13T02:07:10 CST" finished-at="2021-11-13T02:07:12 CST">
     <groups>
-      <group name="loginTrue">
-        <method signature="loginTest.loginTrue()[pri:0, instance:cases.loginTest@7f6b8c]" name="loginTrue" class="cases.loginTest"/>
-      </group> <!-- loginTrue -->
+      <group name="requestTrue">
+        <method signature="bicyclingApiTest.requestTrue()[pri:0, instance:cases.bicyclingApiTest@18d30f7]" name="requestTrue" class="cases.bicyclingApiTest"/>
+      </group> <!-- requestTrue -->
     </groups>
-    <test name="Default test" duration-ms="2267" started-at="2021-11-11T00:38:37 CST" finished-at="2021-11-11T00:38:40 CST">
-      <class name="cases.loginTest">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:cases.loginTest@7f6b8c]" name="beforeTest" is-config="true" duration-ms="101" started-at="2021-11-11T00:38:37 CST" description="测试准备工作，获取httpClient对象" finished-at="2021-11-11T00:38:37 CST">
+    <test name="Default test" duration-ms="1809" started-at="2021-11-13T02:07:10 CST" finished-at="2021-11-13T02:07:12 CST">
+      <class name="cases.bicyclingApiTest">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:cases.bicyclingApiTest@18d30f7]" name="beforeTest" is-config="true" duration-ms="123" started-at="2021-11-13T02:07:10 CST" description="测试准备工作，获取httpClient对象" finished-at="2021-11-13T02:07:10 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="loginFalse()[pri:0, instance:cases.loginTest@7f6b8c]" name="loginFalse" duration-ms="1780" started-at="2021-11-11T00:38:37 CST" description="用户登录失败接口测试" finished-at="2021-11-11T00:38:39 CST">
+        <test-method status="PASS" signature="requestTrue()[pri:0, instance:cases.bicyclingApiTest@18d30f7]" name="requestTrue" duration-ms="1636" started-at="2021-11-13T02:07:10 CST" description="骑行导航API测试" finished-at="2021-11-13T02:07:12 CST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginFalse -->
-        <test-method status="PASS" signature="loginTrue()[pri:0, instance:cases.loginTest@7f6b8c]" name="loginTrue" duration-ms="58" started-at="2021-11-11T00:38:39 CST" description="用户登录接口测试" finished-at="2021-11-11T00:38:39 CST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginTrue -->
-        <test-method status="PASS" signature="loginunkonw()[pri:0, instance:cases.loginTest@7f6b8c]" name="loginunkonw" duration-ms="266" started-at="2021-11-11T00:38:39 CST" description="用户登录失败接口测试" finished-at="2021-11-11T00:38:40 CST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginunkonw -->
-      </class> <!-- cases.loginTest -->
+        </test-method> <!-- requestTrue -->
+      </class> <!-- cases.bicyclingApiTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
