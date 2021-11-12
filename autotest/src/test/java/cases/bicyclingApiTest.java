@@ -29,7 +29,6 @@ public class bicyclingApiTest {
 		bicyclingbean bcycb = session.selectOne("bicyclingApidatacase", 1);
 		System.out.println(TestConfig.address);
 		String URL = TestConfig.address + bcycb.getURI();
-		System.out.println(URL);
 		// 获取测试用例检查点
 		String veriftypoints = bcycb.getVeriftyPoints();
 System.out.println(veriftypoints);
@@ -42,17 +41,14 @@ System.out.println(veriftypoints);
 			// 根据":"截取字符串数组
 			String[] str2 = str1[i].split("=");
 			// str2[0]为KEY,str2[1]为值
-			System.out.println(str2[0]);
-			System.out.println(str2[1]);
 			oku
 			.addParam(str2[0], str2[1]);
 		}
 
-		System.out.println(bcycb.getRequestHeader());
+//		System.out.println(bcycb.getRequestHeader());
 		// 带head或者无head的GET请求
 		String Result = oku.url(URL).get().sync();
 		Result = Result.substring(1, 44);
-		System.out.println(Result);
 		Assert.assertEquals(veriftypoints, Result);
 		
 		/**
