@@ -144,7 +144,8 @@ public class OkHttpUtils {
      *                   false等于普通的表单提交
      * @return
      */
-    public OkHttpUtils post(boolean isJsonPost) {
+    @SuppressWarnings("deprecation")
+	public OkHttpUtils post(boolean isJsonPost) {
         RequestBody requestBody;
         if (isJsonPost) {
             String json = "";

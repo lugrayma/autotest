@@ -15,8 +15,16 @@ public class bicyclingbean {
     private String associationParameter;
     private String isAuto;
     private String veriftyPoints;
+    //需要解析的数据类型有三种String（包含或等于）；JSONObject（需要遍历找出包含或者等于）；JSONArray（需要遍历找出包含或等于）
+    private String Data_type;
 	public int getId() {
 		return id;
+	}
+	public String getData_type() {
+		return Data_type;
+	}
+	public void setData_type(String data_type) {
+		Data_type = data_type;
 	}
 	public void setId(int id) {
 		this.id = id;
