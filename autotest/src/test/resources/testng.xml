@@ -12,6 +12,6 @@
   </test> 
   <listeners>
   		<listener class-name="config.ExtentTestNGIReporterListener"></listener>
-  		<listener class-name="AssertListener"></listener>
+  		<listener class-name="config.AssertListener"></listener>
   </listeners>
 </suite> 
