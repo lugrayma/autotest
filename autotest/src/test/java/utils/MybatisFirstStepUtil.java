@@ -8,7 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-public class DatabaseUtil {
+public class MybatisFirstStepUtil {
     public static SqlSession getSqlsession() throws IOException {
 
         //获取配置资源文件

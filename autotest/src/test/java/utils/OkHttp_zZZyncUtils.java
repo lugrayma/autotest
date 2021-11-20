@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
  
-public class OkHttpUtils {
+public class OkHttp_zZZyncUtils {
     private static volatile OkHttpClient okHttpClient = null;
     private static volatile Semaphore semaphore = null;
     private Map<String, String> headerMap;
@@ -27,9 +27,9 @@ public class OkHttpUtils {
     /**
      * 初始化okHttpClient，并且允许https访问
      */
-    private OkHttpUtils() {
+    private OkHttp_zZZyncUtils() {
         if (okHttpClient == null) {
-            synchronized (OkHttpUtils.class) {
+            synchronized (OkHttp_zZZyncUtils.class) {
                 if (okHttpClient == null) {
                     TrustManager[] trustManagers = buildTrustManagers();
                     okHttpClient = new OkHttpClient.Builder()
@@ -53,7 +53,7 @@ public class OkHttpUtils {
      */
     private static Semaphore getSemaphoreInstance() {
         //只能1个线程同时访问
-        synchronized (OkHttpUtils.class) {
+        synchronized (OkHttp_zZZyncUtils.class) {
             if (semaphore == null) {
                 semaphore = new Semaphore(0);
             }
@@ -66,8 +66,8 @@ public class OkHttpUtils {
      *
      * @return
      */
-    public static OkHttpUtils builder() {
-        return new OkHttpUtils();
+    public static OkHttp_zZZyncUtils builder() {
+        return new OkHttp_zZZyncUtils();
     }
  
     /**
@@ -76,7 +76,7 @@ public class OkHttpUtils {
      * @param url
      * @return
      */
-    public OkHttpUtils url(String url) {
+    public OkHttp_zZZyncUtils url(String url) {
         this.url = url;
         return this;
     }
@@ -88,7 +88,7 @@ public class OkHttpUtils {
      * @param value 参数值
      * @return
      */
-    public OkHttpUtils addParam(String key, String value) {
+    public OkHttp_zZZyncUtils addParam(String key, String value) {
         if (paramMap == null) {
             paramMap = new LinkedHashMap<>(16);
         }
@@ -103,7 +103,7 @@ public class OkHttpUtils {
      * @param value 参数值
      * @return
      */
-    public OkHttpUtils addHeader(String key, String value) {
+    public OkHttp_zZZyncUtils addHeader(String key, String value) {
         if (headerMap == null) {
             headerMap = new LinkedHashMap<>(16);
         }
@@ -116,7 +116,7 @@ public class OkHttpUtils {
      *
      * @return
      */
-    public OkHttpUtils get() {
+    public OkHttp_zZZyncUtils get() {
         request = new Request.Builder().get();
         StringBuilder urlBuilder = new StringBuilder(url);
         if (paramMap != null) {
@@ -145,7 +145,7 @@ public class OkHttpUtils {
      * @return
      */
     @SuppressWarnings("deprecation")
-	public OkHttpUtils post(boolean isJsonPost) {
+	public OkHttp_zZZyncUtils post(boolean isJsonPost) {
         RequestBody requestBody;
         if (isJsonPost) {
             String json = "";

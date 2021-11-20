@@ -7,11 +7,11 @@ import model.bicyclingbean;
  * @author Administrator
  * @apiNote : Get请求，判断是否有请求头，处理返回的StringJSON，最终返回expectedResult。
  */
-public class HttpGetActualResult {
+public class GetResult {
 	public static String httpGetResult(String URL, bicyclingbean bcycb) {
 		// 请求截取请求参数，放入OKHTTP3请求参数中
 
-		OkHttpUtils oku = OkHttpUtils.builder();
+		OkHttp_zZZyncUtils oku = OkHttp_zZZyncUtils.builder();
 		String str_param = bcycb.getRequestParameter();
 		String str_head = bcycb.getRequestHeader();
 		String result = null;
@@ -20,7 +20,7 @@ public class HttpGetActualResult {
 			result = oku.url(URL).get().sync();
 			// 如果请求参数为null但请求头不为null
 		} else if (str_param == null && str_head != null) {
-			// 根据逗号截取字符串数组
+			// 根据逗号截取字符串数组 
 			String[] str1 = str_head.split(",");
 			for (int i = 0; i < str1.length; i++) {
 				// 根据"="截取字符串数组

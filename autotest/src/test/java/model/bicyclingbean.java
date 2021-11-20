@@ -16,7 +16,7 @@ public class bicyclingbean {
     private String isAuto;
     private String veriftyPoints;
     //需要解析的数据类型有三种String（包含或等于）；JSONObject（需要遍历找出包含或者等于）；JSONArray（需要遍历找出包含或等于）
-    private String Data_type;
+    private String Data_type; 
 	public int getId() {
 		return id;
 	}
