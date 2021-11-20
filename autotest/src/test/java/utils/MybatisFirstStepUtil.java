@@ -12,7 +12,7 @@ public class MybatisFirstStepUtil {
     public static SqlSession getSqlsession() throws IOException {
 
         //获取配置资源文件
-        Reader reader = Resources.getResourceAsReader("databaseConfig.xml");
+        Reader reader = Resources.getResourceAsReader("MyBatisConnectConfig.xml");
 
         SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(reader);
         //sqlSession就是能够执行配置文件中的sql语句

@@ -2,23 +2,23 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="3067" started-at="2021-11-20T12:24:44 CST" finished-at="2021-11-20T12:24:47 CST">
+  <suite name="Default suite" duration-ms="6824" started-at="2021-11-20T21:28:21 CST" finished-at="2021-11-20T21:28:28 CST">
     <groups>
       <group name="requestTrue">
-        <method signature="bicyclingApiTest.requestTrue()[pri:0, instance:cases.bicyclingApiTest@19651f3]" name="requestTrue" class="cases.bicyclingApiTest"/>
+        <method signature="Api1_Test.requestTrue()[pri:0, instance:cases.Api1_Test@19651f3]" name="requestTrue" class="cases.Api1_Test"/>
       </group> <!-- requestTrue -->
     </groups>
-    <test name="Default test" duration-ms="3067" started-at="2021-11-20T12:24:44 CST" finished-at="2021-11-20T12:24:47 CST">
-      <class name="cases.bicyclingApiTest">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:cases.bicyclingApiTest@19651f3]" name="beforeTest" is-config="true" duration-ms="118" started-at="2021-11-20T12:24:44 CST" description="测试准备工作，获取httpClient对象" finished-at="2021-11-20T12:24:44 CST">
+    <test name="Default test" duration-ms="6824" started-at="2021-11-20T21:28:21 CST" finished-at="2021-11-20T21:28:28 CST">
+      <class name="cases.Api1_Test">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:cases.Api1_Test@19651f3]" name="beforeTest" is-config="true" duration-ms="176" started-at="2021-11-20T21:28:21 CST" description="测试准备工作，获取httpClient对象" finished-at="2021-11-20T21:28:22 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="requestTrue()[pri:0, instance:cases.bicyclingApiTest@19651f3]" name="requestTrue" duration-ms="2901" started-at="2021-11-20T12:24:44 CST" description="骑行导航API测试" finished-at="2021-11-20T12:24:47 CST">
+        <test-method status="PASS" signature="requestTrue()[pri:0, instance:cases.Api1_Test@19651f3]" name="requestTrue" duration-ms="6553" started-at="2021-11-20T21:28:22 CST" description="骑行导航API测试" finished-at="2021-11-20T21:28:28 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- requestTrue -->
-      </class> <!-- cases.bicyclingApiTest -->
+      </class> <!-- cases.Api1_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

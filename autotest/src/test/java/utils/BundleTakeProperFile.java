@@ -5,7 +5,7 @@ import java.util.ResourceBundle;
 
 import model.InterfaceName;
 
-public class ResourBundleTakePropFile {
+public class BundleTakeProperFile {
     public static ResourceBundle bundle = ResourceBundle.getBundle("application",Locale.CHINA);
     public static String getUrl(InterfaceName name){
         String address = "";

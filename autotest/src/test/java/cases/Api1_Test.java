@@ -1,19 +1,25 @@
 package cases;
 
 import java.io.IOException;
+import java.util.Iterator;
 
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.ibatis.session.SqlSession;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import cn.hutool.json.JSONArray;
+import cn.hutool.json.JSONObject;
+import cn.hutool.json.JSONUtil;
 import config.TestConfig;
 import controller.CoreRun;
+import junit.framework.Assert;
 import model.InterfaceName;
+import model.bean1;
 import model.bicyclingbean;
+import utils.BundleTakeProperFile;
 import utils.GetResult_zZ;
 import utils.MybatisFirstStepUtil;
-import utils.ResourBundleTakePropFile;
 
 public class Api1_Test {
 
@@ -23,32 +29,45 @@ public class Api1_Test {
 
 	@BeforeTest(groups = "requestTrue", description = "测试准备工作，获取httpClient对象")
 	public void beforeTest() {
-		TestConfig.address = ResourBundleTakePropFile.getUrl(InterfaceName.BICYCLINGAPI);
+		TestConfig.address = BundleTakeProperFile.getUrl(InterfaceName.BICYCLINGAPI);
 		TestConfig.defaultHttpClient = new DefaultHttpClient();
 	}
 
 	@Test(groups = "requestTrue", description = "骑行导航API测试")
 	public void requestTrue() throws IOException {
 		SqlSession session = MybatisFirstStepUtil.getSqlsession();
-		bicyclingbean bcycb = session.selectOne("bicyclingApidatacase", 5);
+		try {
+			int sqlcount = session.selectOne("model.select_count");
+			for (int i = 1; i <= sqlcount; i++) {
+				// 操作CRUD，第一个参数：指定statement，规则：命名空间+“.”+statementId
+				// 第二个参数：指定传入sql的参数：这里是用户id
+				bicyclingbean bcycb = session.selectOne("select_ibicycling", i);
+				// 接口地址
+				String URL = TestConfig.address + bcycb.getURI();
+				// 获取测试用例检查点
+				String veriftypoints = bcycb.getVeriftyPoints();
+				// 需要解析的数据类型有三种String（包含或等于）；JSONObject（需要遍历找出包含或者等于）；JSONArray（需要遍历找出包含或等于）
+				String DT = bcycb.getData_type();
+//				System.out.println(DT);
+				// OKHTTP 返回响应数据结果
+				String Result = GetResult_zZ.httpGetResult(URL, bcycb);
+//				System.out.println(Result);
+//				String Result = "{\"status\":\"1\",\"route\":{\"paths\":[{\"steps\":[{\"nima\":[{\"niba\":[{\"nilaoye\":\"111\"}]}]}]}]}}";
+				/**
+				 * @author Administrator
+				 * @note 执行区间
+				 */
+				CoreRun.executer(DT, veriftypoints, Result, session,i,bcycb);
+				// 更新测试用例状态
+//				bicyclingbean user = session.selectOne("model.update1", 2);
+			}
 
-		// 接口地址
-		String URL = TestConfig.address + bcycb.getURI();
-		// 获取测试用例检查点
-		String veriftypoints = bcycb.getVeriftyPoints();
-		// 需要解析的数据类型有三种String（包含或等于）；JSONObject（需要遍历找出包含或者等于）；JSONArray（需要遍历找出包含或等于）
-		String DT = bcycb.getData_type();
-		// OKHTTP 返回响应数据结果
-		String Result = GetResult_zZ.httpGetResult(URL, bcycb);
-//		String Result = "{\"status\":\"1\",\"route\":{\"paths\":[{\"steps\":[{\"nima\":[{\"niba\":[{\"nilaoye\":\"111\"}]}]}]}]}}";
-		/**
-		 * @author Administrator
-		 * @note 执行区间
-		 */
-		CoreRun.executer(DT, veriftypoints, Result);
-//		extracted(DT, veriftypoints, Result);
+		} finally {
+			session.close();
+		}
 	}
-//
+}
+
 //	public void extracted(String DT, String veriftypoints, String Result) {
 //		if (DT.equals("String")) {// 如果是字符串类型的返回数据，直接比较文本。
 //			int br = Result.indexOf(veriftypoints);
@@ -68,7 +87,7 @@ public class Api1_Test {
 //			// 实际结果result_json
 //			JSONObject result_json = JSONUtil.parseObj(Result);
 //			// 找出result_json中对应key的值
-//			bicyclingApiTest.getAllKey(result_json, vp_expected_key);
+//			getAllKey(result_json, vp_expected_key);
 //			// 断言实际结果包含或等于预期结果
 //			int br = result_final.toString().indexOf(veriftypoints_expected_value);
 //			Assert.assertTrue("实际结果:" + vp_expected_key + '=' + result_final + '\r' + "不包含或等于预期结果:"
@@ -133,4 +152,3 @@ public class Api1_Test {
 //			}
 //		}
 //	}
-}
