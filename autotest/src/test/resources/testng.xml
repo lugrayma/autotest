@@ -3,10 +3,10 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-		<class name="cases.loginTest">
+		<class name="cases.Api1_Test">
 			<methods>
-				<include name="loginTrue"></include>
-				<include name="loginFalse"></include>
+				<include name="beforeTest"></include>
+				<include name="requestTrue"></include>
 			</methods>
 		</class>
     </classes>

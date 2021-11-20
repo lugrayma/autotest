@@ -7,7 +7,7 @@ import model.bicyclingbean;
  * @author Administrator
  * @apiNote : Get请求，判断是否有请求头，处理返回的StringJSON，最终返回expectedResult。
  */
-public class GetResult {
+public class GetResult_zZ {
 	public static String httpGetResult(String URL, bicyclingbean bcycb) {
 		// 请求截取请求参数，放入OKHTTP3请求参数中
 

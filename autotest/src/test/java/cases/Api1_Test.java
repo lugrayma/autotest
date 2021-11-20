@@ -11,11 +11,11 @@ import config.TestConfig;
 import controller.CoreRun;
 import model.InterfaceName;
 import model.bicyclingbean;
-import utils.GetResult;
+import utils.GetResult_zZ;
 import utils.MybatisFirstStepUtil;
 import utils.ResourBundleTakePropFile;
 
-public class bicyclingApiTest {
+public class Api1_Test {
 
 	public static Object result_final;
 	public static Object result_final2;
@@ -39,9 +39,8 @@ public class bicyclingApiTest {
 		// 需要解析的数据类型有三种String（包含或等于）；JSONObject（需要遍历找出包含或者等于）；JSONArray（需要遍历找出包含或等于）
 		String DT = bcycb.getData_type();
 		// OKHTTP 返回响应数据结果
-		String Result = GetResult.httpGetResult(URL, bcycb);
+		String Result = GetResult_zZ.httpGetResult(URL, bcycb);
 //		String Result = "{\"status\":\"1\",\"route\":{\"paths\":[{\"steps\":[{\"nima\":[{\"niba\":[{\"nilaoye\":\"111\"}]}]}]}]}}";
-
 		/**
 		 * @author Administrator
 		 * @note 执行区间
