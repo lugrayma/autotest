@@ -2,19 +2,19 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="2116" started-at="2021-11-20T01:54:55 CST" finished-at="2021-11-20T01:54:58 CST">
+  <suite name="Default suite" duration-ms="3067" started-at="2021-11-20T12:24:44 CST" finished-at="2021-11-20T12:24:47 CST">
     <groups>
       <group name="requestTrue">
-        <method signature="bicyclingApiTest.requestTrue()[pri:0, instance:cases.bicyclingApiTest@1af5db5]" name="requestTrue" class="cases.bicyclingApiTest"/>
+        <method signature="bicyclingApiTest.requestTrue()[pri:0, instance:cases.bicyclingApiTest@19651f3]" name="requestTrue" class="cases.bicyclingApiTest"/>
       </group> <!-- requestTrue -->
     </groups>
-    <test name="Default test" duration-ms="2116" started-at="2021-11-20T01:54:55 CST" finished-at="2021-11-20T01:54:58 CST">
+    <test name="Default test" duration-ms="3067" started-at="2021-11-20T12:24:44 CST" finished-at="2021-11-20T12:24:47 CST">
       <class name="cases.bicyclingApiTest">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:cases.bicyclingApiTest@1af5db5]" name="beforeTest" is-config="true" duration-ms="47" started-at="2021-11-20T01:54:55 CST" description="测试准备工作，获取httpClient对象" finished-at="2021-11-20T01:54:55 CST">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:cases.bicyclingApiTest@19651f3]" name="beforeTest" is-config="true" duration-ms="118" started-at="2021-11-20T12:24:44 CST" description="测试准备工作，获取httpClient对象" finished-at="2021-11-20T12:24:44 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="requestTrue()[pri:0, instance:cases.bicyclingApiTest@1af5db5]" name="requestTrue" duration-ms="2025" started-at="2021-11-20T01:54:56 CST" description="骑行导航API测试" finished-at="2021-11-20T01:54:58 CST">
+        <test-method status="PASS" signature="requestTrue()[pri:0, instance:cases.bicyclingApiTest@19651f3]" name="requestTrue" duration-ms="2901" started-at="2021-11-20T12:24:44 CST" description="骑行导航API测试" finished-at="2021-11-20T12:24:47 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- requestTrue -->
