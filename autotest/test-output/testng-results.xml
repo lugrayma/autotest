@@ -2,19 +2,19 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="8583" started-at="2021-11-24T00:58:18 CST" finished-at="2021-11-24T00:58:26 CST">
+  <suite name="Default suite" duration-ms="11862" started-at="2021-11-25T16:30:31 CST" finished-at="2021-11-25T16:30:43 CST">
     <groups>
       <group name="requestTrue">
         <method signature="Api1_Test.requestTrue()[pri:0, instance:api_suite.Api1_Test@19651f3]" name="requestTrue" class="api_suite.Api1_Test"/>
       </group> <!-- requestTrue -->
     </groups>
-    <test name="Default test" duration-ms="8583" started-at="2021-11-24T00:58:18 CST" finished-at="2021-11-24T00:58:26 CST">
+    <test name="Default test" duration-ms="11862" started-at="2021-11-25T16:30:31 CST" finished-at="2021-11-25T16:30:43 CST">
       <class name="api_suite.Api1_Test">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:api_suite.Api1_Test@19651f3]" name="beforeTest" is-config="true" duration-ms="13" started-at="2021-11-24T00:58:18 CST" description="测试准备工作，获取httpClient对象" finished-at="2021-11-24T00:58:18 CST">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:api_suite.Api1_Test@19651f3]" name="beforeTest" is-config="true" duration-ms="14" started-at="2021-11-25T16:30:31 CST" description="测试准备工作，获取httpClient对象" finished-at="2021-11-25T16:30:31 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="requestTrue()[pri:0, instance:api_suite.Api1_Test@19651f3]" name="requestTrue" duration-ms="8521" started-at="2021-11-24T00:58:18 CST" description="骑行导航API测试" finished-at="2021-11-24T00:58:26 CST">
+        <test-method status="PASS" signature="requestTrue()[pri:0, instance:api_suite.Api1_Test@19651f3]" name="requestTrue" duration-ms="11796" started-at="2021-11-25T16:30:31 CST" description="骑行导航API测试" finished-at="2021-11-25T16:30:43 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- requestTrue -->
