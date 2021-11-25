@@ -83,17 +83,65 @@ public class CoreRun {
 				Assertion.verifyTrue(br,
 						"实际结果:" + vp_expected_key + '=' + result_final + '\r' + "不等于预期结果:" + vp_expected_value);
 			} else {
-				Assertion.verifyNotNull(result_final,
-						"实际结果:" + result_json2 + '\r' + "不等于预期结果:" + vp_expected_value);
+				Assertion.verifyNotNull(result_final, "实际结果:" + result_json2 + '\r' + "不等于预期结果:" + vp_expected_value);
 			}
-		} else if (DT.equals("Contains")) {//包含
-			boolean br = Result.contains(veriftypoints);
-			if (br) {
-				session.selectOne("model.update1", i);
+		} else if (DT.equals("Contains")) {// 包含
+			// 多个字段包含
+			if (veriftypoints.contains(", ")) {
+				String[] str = veriftypoints.split(", ", -1);
+				int num = 0;
+				for (int j = 0; j < str.length; j++) {
+					boolean br = Result.contains(str[j]);
+					// 111 010 011
+					if (!br) {
+						num = num - 1;
+					}
+				}
+				if (num < 0) {
+					session.selectOne("model.update0", i);
+				} else if (num == 0) {
+					session.selectOne("model.update1", i);
+				}
+				Assertion.verifyTrue(num == 0, "实际结果:" + Result + '\r' + "不包含" + "预期结果：" + veriftypoints);
+			} else if (!veriftypoints.contains(", ")) {
+				// 单个字段包含
+				boolean br = Result.contains(veriftypoints);
+				if (br) {
+					session.selectOne("model.update1", i);
+				} else {
+					session.selectOne("model.update0", i);
+				}
+				Assertion.verifyTrue(br, "实际结果:" + Result + '\r' + "不包含预期结果：" + veriftypoints);
+			}
+		} else if (DT.equals("NoContains")) {
+			if (!veriftypoints.contains(", ")) {
+				boolean br = Result.contains(veriftypoints);
+				if (!br) {
+					session.selectOne("model.update1", i);
+				} else {
+					session.selectOne("model.update0", i);
+				}
+				Assertion.verifyTrue(!br,
+						"实际结果:" + Result + '\r' + "包含" + "预期结果：" + veriftypoints + "在内，但是预期想要的结果是不包含");
 			} else {
-				session.selectOne("model.update0", i);
+				String[] str = veriftypoints.split(", ", -1);
+				int num = 0;
+				for (int j = 0; j < str.length; j++) {
+					boolean br = Result.contains(str[j]);
+					// 0 0 0 100 010 001 110 101
+					if (br == true) {
+						num = num + 1;
+					}
+				}
+				if (num > 0) {
+					session.selectOne("model.update0", i);
+				} else if (num == 0) {
+					session.selectOne("model.update1", i);
+				}
+				Assertion.verifyTrue(!(num == 0),
+						"实际结果:" + Result + '\r' + "包含" + "预期结果：" + veriftypoints + "在内，但是预期想要的结果是不包含");
+
 			}
-			Assertion.verifyTrue(br, "实际结果:" + Result + '\r' + "不包含" + veriftypoints);
 		}
 	}
 

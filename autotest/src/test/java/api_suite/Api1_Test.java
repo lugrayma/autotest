@@ -38,10 +38,16 @@ public class Api1_Test {
 		String URL = null;
 		try {
 			int sqlcount = session.selectOne("model.select_count");
+			System.out.println(sqlcount);
 			for (int i = 1; i <= sqlcount; i++) {
 				// 操作CRUD，第一个参数：指定statement，规则：命名空间+“.”+statementId
 				// 第二个参数：指定传入sql的参数：这里是用户id
 				bicyclingbean bcycb = session.selectOne("select_ibicycling", i);
+				
+				//如果是否执行自动为n，跳过下次循环。
+				if(bcycb.getIsAuto().equals("n")) {
+					continue;
+				}
 				// 接口地址
 				//测试环境
 //				String URL = BeforeTestConfig.address;

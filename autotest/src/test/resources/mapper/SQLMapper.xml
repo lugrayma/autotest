@@ -8,21 +8,21 @@
 	<!--获取登录接口case -->
 	<select id="select_ibicycling" parameterType="Integer"
 		resultType="model.bicyclingbean">
-		SELECT * FROM api1_test
+		SELECT * FROM api2_test
 		where
 		id=#{id};
 	</select>
 		<select id="select_count" parameterType="Integer"
 		resultType="Integer">
-		SELECT count(*) FROM api1_test;
+		SELECT count(*) FROM api2_test;
 	</select>
     <update id="update1" parameterType="model.bicyclingbean">
-        UPDATE api1_test set isSuccess = "是"
+        UPDATE api2_test set isSuccess = "是"
         WHERE
         (id = #{id});
     </update>
         <update id="update0" parameterType="model.bicyclingbean">
-        UPDATE api1_test set isSuccess = "否"
+        UPDATE api2_test set isSuccess = "否"
         WHERE
         (id = #{id});
     </update>
