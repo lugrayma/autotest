@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name = "env_host">
+	<test name="param">
+		<classes>
+			<class name="api_suite.Api1_Test" />
+			<parameter name="dev" value="https://restapi.amap.com"></parameter>
+			<parameter name="test" value="http://localhost:9999/demo"></parameter>
+			<parameter name="product" value=""></parameter>
+			<parameter name="" value=""></parameter>
+			<parameter name="" value=""></parameter>
+		</classes>
+	</test>
+</suite>
+<!-- 未使用 -->
