@@ -12,6 +12,8 @@ public class BundleTakeProperFile {
         //最终测试地址
         if (name == InterfaceName.BICYCLINGAPI){
         	address = bundle.getString("host");
+        }else if(name == InterfaceName.MOCOTEST) {
+        	address = bundle.getString("host1");
         }
         return address;
     }

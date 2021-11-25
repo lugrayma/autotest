@@ -14,40 +14,46 @@ public class CoreRun {
 	public static Object result_final;
 	public static Object jarr;
 
-	public static void executer(String DT, String veriftypoints, String Result, SqlSession session, int i, bicyclingbean bicyclingbean) {
-		if (DT.equals("String")) {// 如果是字符串类型的返回数据，直接比较文本。
-			int br = Result.indexOf(veriftypoints);
-			if (br >= 0) {
+	public static void executer(String DT, String veriftypoints, String Result, SqlSession session, int i,
+			bicyclingbean bicyclingbean) {
+		if (DT.equals("allEquals")) {// 如果是message类型的返回数据，直接比较文本。
+			boolean br = Result.equals(veriftypoints);
+			if (br) {
 				session.selectOne("model.update1", i);
-			}else {
+			} else {
 				session.selectOne("model.update0", i);
 			}
-			Assertion.verifyTrue(br >= 0, "实际结果:" + Result + '\r' + "不包含或等于预期结果:" + veriftypoints);
+			Assertion.verifyTrue(br, "实际结果:" + Result + '\r' + "不等于预期结果:" + veriftypoints);
 		} else if (DT.equals("JSONObject")) {// 如果是JSONObject类型的返回数据，需要剥洋葱。
 			// 查找数据格式{"destination":"X"}
 			String strat = "{\""; // 你指定的前缀字符串
 			String end = "\":\""; // 你指定的后缀字符串
 			int startIndex = veriftypoints.indexOf(strat) + strat.length();
 			int endIndex = veriftypoints.indexOf(end); // 上两句获取的是要取出字符串的前后坐标
+
 			String vp_expected_key = veriftypoints.substring(startIndex, endIndex); // 你要的结果
 
 			JSONObject veriftypointsJson = JSONUtil.parseObj(veriftypoints);
 			// 预期结果为表中定义{"destination":"X"}的X
 			String veriftypoints_expected_value = (String) veriftypointsJson.get(vp_expected_key);
-//				System.out.println(veriftypoints_expected_value);
 			// 实际结果result_json
 			JSONObject result_json = JSONUtil.parseObj(Result);
 			// 找出result_json中对应key的值
 			getAllKey(result_json, vp_expected_key);
 			// 断言实际结果包含或等于预期结果
-			int br = result_final.toString().indexOf(veriftypoints_expected_value);
-			if (br >= 0) {
-				session.selectOne("model.update1", i);
-			}else {
+			if (result_final != null) {
+				boolean br = result_final.toString().equals(veriftypoints_expected_value);
+				if (br) {
+					session.selectOne("model.update1", i);
+					Assertion.verifyTrue(br, "实际结果:" + vp_expected_key + '=' + result_final + '\r' + "不等于预期结果:"
+							+ veriftypoints_expected_value);
+				}
+			} else {
 				session.selectOne("model.update0", i);
+				Assertion.verifyNotNull(result_final,
+						"无效的字段 " + vp_expected_key + "或者无效的预期值  " + veriftypoints_expected_value);
 			}
-			Assertion.verifyTrue(br >= 0, "实际结果:" + vp_expected_key + '=' + result_final + '\r' + "不包含或等于预期结果:"
-					+ veriftypoints_expected_value);
+
 		} else if (DT.equals("JSONArray")) {//// 如果是JSONArray类型的返回数据，需要剥洋葱。
 			// 查找数据格式"paths":"["0":{}]"
 			String strat1 = "{\""; // 你指定的前缀字符串
@@ -63,22 +69,31 @@ public class CoreRun {
 			int endIndex2 = veriftypoints.indexOf(end2); // 上两句获取的是要取出字符串的前后坐标
 			// 预期结果需要检查的值
 			String vp_expected_value = veriftypoints.substring(startIndex2, endIndex2); // 你要的结果
-
+			System.out.println(vp_expected_value);
 			// 实际结果result_json
 			JSONObject result_json2 = JSONUtil.parseObj(Result);
 			getAllKey(result_json2, vp_expected_key);
 			if (result_final != null) {
-				int br = result_final.toString().indexOf(vp_expected_value);
-				if (br >= 0) {
+				boolean br = result_final.toString().equals(vp_expected_value);
+				if (br) {
 					session.selectOne("model.update1", i);
-				}else {
+				} else {
 					session.selectOne("model.update0", i);
 				}
-				Assertion.verifyTrue(br >= 0,
-						"实际结果:" + vp_expected_key + '=' + result_final + '\r' + "不包含或等于预期结果:" + vp_expected_value);
+				Assertion.verifyTrue(br,
+						"实际结果:" + vp_expected_key + '=' + result_final + '\r' + "不等于预期结果:" + vp_expected_value);
 			} else {
-				Assertion.verifyNotNull(result_final, "实际结果:" + result_json2 + '\r' + "不包含或等于预期结果:" + vp_expected_value);
+				Assertion.verifyNotNull(result_final,
+						"实际结果:" + result_json2 + '\r' + "不等于预期结果:" + vp_expected_value);
 			}
+		} else if (DT.equals("Contains")) {//包含
+			boolean br = Result.contains(veriftypoints);
+			if (br) {
+				session.selectOne("model.update1", i);
+			} else {
+				session.selectOne("model.update0", i);
+			}
+			Assertion.verifyTrue(br, "实际结果:" + Result + '\r' + "不包含" + veriftypoints);
 		}
 	}
 
