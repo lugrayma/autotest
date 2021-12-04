@@ -7,6 +7,12 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<url>http://maven.apache.org</url>
 	<packaging>jar</packaging>
+	<!-- 继承Spring boot 相关依赖（免去自己配置） -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.2.RELEASE</version>
+	</parent>
 	<!-- properties -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -49,7 +55,7 @@
 
 	<!-- build -->
 	<build>
-	<!-- 切换环境配置 -->
+		<!-- 切换环境配置 -->
 		<filters>
 			<filter>src/main/filters/filter-${env}.properties</filter>
 		</filters>
@@ -204,6 +210,23 @@
 			<groupId>cn.hutool</groupId>
 			<artifactId>hutool-all</artifactId>
 			<version>5.7.14</version>
+		</dependency>
+
+		<!-- springboot依赖，如果是web应用，需要引入的web相关依赖 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!--Springboot的springfox-swagger2插件 -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.6.1</version>
 		</dependency>
 	</dependencies>
 </project>
